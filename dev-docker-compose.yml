@@ -1,0 +1,11 @@
+version: "3.3"
+services:
+  api:
+    build:
+      context: .
+    volumes:
+      - ~/.m2:/root/.m2
+      - ./:/templatespringdev
+    command: mvn spring-boot:run -DskipTests
+    ports:
+      - "8080:8080"
